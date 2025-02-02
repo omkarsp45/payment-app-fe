@@ -44,7 +44,6 @@ export function Signup() {
     const onSubmit = async (data: any) => {
         setLoading(true);
         try {
-            console.log('1');
             // Sign up request
             console.log(data);
             const signupResponse = await fetch("http://localhost:3000/user/signup", {
@@ -54,13 +53,11 @@ export function Signup() {
                 },
                 body: JSON.stringify(data),
             });
-            console.log('1');
 
             if (!signupResponse.status) {
                 throw new Error("Failed to sign up");
             }
 
-            console.log('1');
             // Sign in request
             const signinResponse = await fetch("http://localhost:3000/user/signin", {
                 method: "POST",
@@ -69,7 +66,6 @@ export function Signup() {
                 },
                 body: JSON.stringify({ email: data.email, password: data.password }),
             });
-            console.log('1');
 
             if (!signinResponse.status) {
                 throw new Error("Failed to sign in");

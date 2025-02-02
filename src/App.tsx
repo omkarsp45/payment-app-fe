@@ -19,7 +19,11 @@ function App() {
           <PrivateRoute>
             <Dashboard />
           </PrivateRoute>} />
-        <Route path="/*" element={<div className='w-screen flex justify-center items-center'><p>Page not found</p></div>} />
+        <Route path="/*" element={
+          <div className='w-screen flex flex-col justify-center items-center'>
+            <p>Page not found</p>
+            <a href="/dashboard">Home Page</a>
+          </div>} />
       </Routes>
     </BrowserRouter>
   )

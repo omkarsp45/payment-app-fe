@@ -52,7 +52,6 @@ export function Signin() {
             if (!signinResponse.ok) {
                 throw new Error("Failed to sign in");
             }
-
             const { token } = await signinResponse.json();
             localStorage.setItem("token", token);
             navigate('/dashboard');
